@@ -1,0 +1,40 @@
+<h3 class="title">Prueba Básica</h3>
+<p>
+  El objetivo de esta prueba es usar una API publica para obtener información y mostrarla en una tabla.
+</p>
+<p>
+  La siguiente tabla debe mostrar la lista de departamentos y ciudades despues de invocar el API publica:
+  <a target="_blank" href="https://www.datos.gov.co/resource/xdk5-pm3f.json">https://www.datos.gov.co/resource/xdk5-pm3f.json</a>
+</p>
+<p>
+  Si lo desea, podrá encontrar la documentación del API en el siguiente link:
+  <a target="_blank" href="https://dev.socrata.com/foundry/www.datos.gov.co/xdk5-pm3f">https://dev.socrata.com/foundry/www.datos.gov.co/xdk5-pm3f</a>
+</p>
+<p>
+  Utilice la clase <b>BasicService</b> para invocar el API y retornar los resultados al componente que va a mostrar la
+  información en la siguiente tabla:
+</p>
+<br>
+<table class="table table-hover table-bordered">
+  <caption><strong>Departamentos y Ciudades</strong></caption>
+  <thead>
+  <tr>
+    <th><strong>#</strong></th>
+    <th><strong>Cod. Departamento</strong></th>
+    <th><strong>Nombre Departamento</strong></th>
+    <th><strong>Cod Municipio</strong></th>
+    <th><strong>Nombre Municipio</strong></th>
+  </tr>
+  </thead>
+  <tbody>
+  <!-- TODO: Reemplazar para colocar datos recibidos del API -->
+  <tr *ngFor="let departamento of departamentos$; index as i">
+    <td>{{i+1}}</td>
+    <td>{{departamento.c_digo_dane_del_departamento}}</td>
+    <td>{{departamento.departamento}}</td>
+    <td>{{departamento.c_digo_dane_del_municipio}}</td>
+    <td>{{departamento.municipio}}</td>
+  </tr>
+  </tbody>
+</table>
+

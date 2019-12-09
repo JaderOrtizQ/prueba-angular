@@ -1,0 +1,71 @@
+<h3 class="title">Prueba Intermedia</h3>
+<p>
+  El objetivo de esta prueba es realizar la creación y lectura de un entidad (empleado).
+</p>
+<section>
+  <p>Utilice el siguiente endpoint para leer todas las entidades usando una solicitud (Request) <b>GET</b>:
+    <a target="_blank" href="http://dummy.restapiexample.com/api/v1/employees">http://dummy.restapiexample.com/api/v1/employees</a>
+  </p>
+  <p>
+    <b><i>Se recomienda usar Reactive Forms, pero no es estrictamente necesario ;)</i></b>
+  </p>
+  La entidad es representada en JSON de la siguiente forma:
+  <pre>{{{
+    id: '1',
+    employee_name: 'Nombre',
+    employee_salary: '100',
+    employee_age: '100',
+    profile_image: ''
+  } | json}}</pre>
+</section>
+<section>
+  <p>
+    Para crear un nuevo empleado envie una solicitud (Request) <b>POST</b> el siguiente endpoint:
+    <a target="_blank" href="http://dummy.restapiexample.com/api/v1/create">http://dummy.restapiexample.com/api/v1/create</a>
+  </p>
+</section>
+<section class="padding-2">
+  <p>Utilice el siguiente formulario para capturar los datos y realice la solicitud <b>POST</b> al hacer click en el
+    boton:</p>
+  <form novalidate>
+    <div>
+      <label for="id">ID</label>
+      <input id="id" type="text">
+    </div>
+    <div>
+      <label for="name">Nombre</label>
+      <input id="name" type="text">
+    </div>
+    <div>
+      <label for="salary">Salario</label>
+      <input id="salary" type="text">
+    </div>
+    <div style="margin-top: 5px;">
+      <button type="button" class="mat-button">Crear Empleado</button>
+    </div>
+  </form>
+</section>
+<section>
+  <p>Al hacer click en el siguiente botón se deben leer los datos de la API y mostrarlos en la tabla</p>
+  <button class="mat-button">Actualizar información</button>
+</section>
+<table class="table table-hover table-mc-light-blue">
+  <caption>Empleados</caption>
+  <thead>
+  <tr>
+    <th>#</th>
+    <th>ID</th>
+    <th>Nombre</th>
+    <th>Salario</th>
+  </tr>
+  </thead>
+  <tbody>
+  <!-- TODO: Reemplazar para colocar datos recibidos del API -->
+  <tr *ngFor="let empleado of empleados$; index as i">
+    <td>{{i+1}}</td>
+    <td>{{empleado.id}}</td>
+    <td>Pruebas</td>
+    <td>21000</td>
+  </tr>
+  </tbody>
+</table>
