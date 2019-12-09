@@ -5,7 +5,8 @@ import { Departamento } from './departamento.model';
 
 @Component({
 	selector: 'app-departamentos',
-    templateUrl: './basic.component.html'
+    templateUrl: './basic.component.html',
+    styles:['.table-sm th{padding: 0.3rem;}, .table-sm td{padding: 0.3rem;}']
 })
 export class BasicComponent implements OnInit {
 

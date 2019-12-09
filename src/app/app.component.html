@@ -1,10 +1,11 @@
-<nav style="padding: 0 20px">
-  <h2 class="title">Prueba Tecnica Angular-HARUK</h2>
+<nav style="padding: 0 20px;" class="bg-info">
+  <h2 style="color: white;" class="title">Prueba Tecnica Angular-HARUK</h2>
   <section class="grid">
-    <a [routerLink]="['/basic']">Basico</a>
-    <a [routerLink]="['/intermediate']">Intermedio</a>
+    <a style="color: whitesmoke" [routerLink]="['/basic']">Basico</a>
+    <a style="color: whitesmoke" [routerLink]="['/intermediate']">Intermedio</a>
   </section>
+  <br>
 </nav>
-<section style="max-width: 1000px;margin: auto">
+<section style="max-width: 980px;margin: auto">
   <router-outlet></router-outlet>
 </section>

@@ -1,40 +1,55 @@
-<h3 class="title">Prueba Básica</h3>
-<p>
+<style>
+    .my-custom-scrollbar {
+      position: relative;
+      height: 350px;
+      overflow: auto;
+      }
+      .table-wrapper-scroll-y {
+      display: block;
+  }
+</style>
+<div class="nav navbar navbar-dark bg-warning" >
+  <a class="navbar-brand" href="/">
+    Prueba Básica
+  </a>
+</div>
+<br>
+<h4 class="title" style="text-align: center;">Instrucciones</h4>
+<p style="text-align: left;">
   El objetivo de esta prueba es usar una API publica para obtener información y mostrarla en una tabla.
-</p>
-<p>
+
   La siguiente tabla debe mostrar la lista de departamentos y ciudades despues de invocar el API publica:
   <a target="_blank" href="https://www.datos.gov.co/resource/xdk5-pm3f.json">https://www.datos.gov.co/resource/xdk5-pm3f.json</a>
-</p>
-<p>
+
   Si lo desea, podrá encontrar la documentación del API en el siguiente link:
   <a target="_blank" href="https://dev.socrata.com/foundry/www.datos.gov.co/xdk5-pm3f">https://dev.socrata.com/foundry/www.datos.gov.co/xdk5-pm3f</a>
-</p>
-<p>
+
   Utilice la clase <b>BasicService</b> para invocar el API y retornar los resultados al componente que va a mostrar la
   información en la siguiente tabla:
 </p>
 <br>
-<table class="table table-hover table-bordered">
-  <caption><strong>Departamentos y Ciudades</strong></caption>
-  <thead>
-  <tr>
-    <th><strong>#</strong></th>
-    <th><strong>Cod. Departamento</strong></th>
-    <th><strong>Nombre Departamento</strong></th>
-    <th><strong>Cod Municipio</strong></th>
-    <th><strong>Nombre Municipio</strong></th>
-  </tr>
-  </thead>
-  <tbody>
-  <!-- TODO: Reemplazar para colocar datos recibidos del API -->
-  <tr *ngFor="let departamento of departamentos$; index as i">
-    <td>{{i+1}}</td>
-    <td>{{departamento.c_digo_dane_del_departamento}}</td>
-    <td>{{departamento.departamento}}</td>
-    <td>{{departamento.c_digo_dane_del_municipio}}</td>
-    <td>{{departamento.municipio}}</td>
-  </tr>
-  </tbody>
-</table>
-
+<h4 style="text-align: center;">Departamentos y Ciudades</h4>
+<br>
+<div class="table-wrapper-scroll-y my-custom-scrollbar">
+    <table class="table table-bordered table-striped mb-0">
+        <thead>
+        <tr>
+          <th><strong>#</strong></th>
+          <th style="text-align: center;"><strong>Cod. Departamento</strong></th>
+          <th style="text-align: center;"><strong>Nombre Departamento</strong></th>
+          <th style="text-align: center;"><strong>Cod Municipio</strong></th>
+          <th style="text-align: right;"><strong>Nombre Municipio</strong></th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- TODO: Reemplazar para colocar datos recibidos del API -->
+        <tr *ngFor="let departamento of departamentos$; index as i">
+          <td>{{i+1}}</td>
+          <td style="text-align: center;">{{departamento.c_digo_dane_del_departamento}}</td>
+          <td style="text-align: center;">{{departamento.departamento}}</td>
+          <td>{{departamento.c_digo_dane_del_municipio}}</td>
+          <td style="text-align: right;">{{departamento.municipio}}</td>
+        </tr>
+        </tbody>
+      </table>      
+</div>

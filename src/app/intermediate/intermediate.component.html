@@ -1,4 +1,20 @@
-<h3 class="title">Prueba Intermedia</h3>
+<style>
+  .my-custom-scrollbar {
+    position: relative;
+    height: 400px;
+    overflow: auto;
+    }
+    .table-wrapper-scroll-y {
+    display: block;
+}
+</style>
+<div class="nav navbar navbar-dark bg-secondary" style="margin: 5px;">
+    <a class="navbar-brand" href="/">
+      Prueba Intermedia
+    </a>
+  </div>
+<br>
+<h3 class="title" style="text-align: center;">Instrucciones</h3>
 <p>
   El objetivo de esta prueba es realizar la creación y lectura de un entidad (empleado).
 </p>
@@ -24,48 +40,69 @@
     <a target="_blank" href="http://dummy.restapiexample.com/api/v1/create">http://dummy.restapiexample.com/api/v1/create</a>
   </p>
 </section>
-<section class="padding-2">
+<section >
   <p>Utilice el siguiente formulario para capturar los datos y realice la solicitud <b>POST</b> al hacer click en el
     boton:</p>
+
   <form novalidate>
-    <div>
-      <label for="id">ID</label>
-      <input id="id" type="text">
+
+    <div class="input-group input-group-sm mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroup-sizing-sm">Id</span>
+        </div>
+        <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
     </div>
-    <div>
-      <label for="name">Nombre</label>
-      <input id="name" type="text">
+
+    <div class="input-group input-group-sm mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroup-sizing-sm">Nombre</span>
+        </div>
+        <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
     </div>
-    <div>
-      <label for="salary">Salario</label>
-      <input id="salary" type="text">
+
+    <div class="input-group input-group-sm mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroup-sizing-sm">Salario</span>
+        </div>
+        <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
     </div>
+
     <div style="margin-top: 5px;">
-      <button type="button" class="mat-button">Crear Empleado</button>
+      <button type="button" class="btn btn-success btn-sm">Crear Empleado</button>
     </div>
   </form>
 </section>
 <section>
   <p>Al hacer click en el siguiente botón se deben leer los datos de la API y mostrarlos en la tabla</p>
-  <button class="mat-button">Actualizar información</button>
+  <button class="btn btn-primary btn-sm">Actualizar información</button>
 </section>
-<table class="table table-hover table-mc-light-blue">
-  <caption>Empleados</caption>
-  <thead>
-  <tr>
-    <th>#</th>
-    <th>ID</th>
-    <th>Nombre</th>
-    <th>Salario</th>
-  </tr>
-  </thead>
-  <tbody>
-  <!-- TODO: Reemplazar para colocar datos recibidos del API -->
-  <tr *ngFor="let empleado of empleados$; index as i">
-    <td>{{i+1}}</td>
-    <td>{{empleado.id}}</td>
-    <td>Pruebas</td>
-    <td>21000</td>
-  </tr>
-  </tbody>
-</table>
+<section>
+    <br>
+    <dir class="table-wrapper-scroll-y my-custom-scrollbar">
+      <h4><strong>Empleados</strong></h4>
+        <table class="table table-bordered table-striped mb-0">
+            <thead>
+            <tr>
+              <th>#</th>
+              <th>ID</th>
+              <th>Nombre</th>
+              <th>Edad</th>
+              <th>Salario</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!-- TODO: Reemplazar para colocar datos recibidos del API -->
+            <tr *ngFor="let empleado of empleados$; index as i">
+              <td>{{i+1}}</td>
+              <td>{{empleado.id}}</td>
+              <td>{{empleado.employee_name}}</td>
+              <td>{{empleado.employee_age}}</td>
+              <td>{{empleado.employee_salary}}</td>
+            </tr>
+            </tbody>
+          </table>
+    </dir>
+</section>
+
+
+
